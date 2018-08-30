@@ -1,0 +1,136 @@
+@charset "UTF-8";
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: #333;
+    font-size: .14rem;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "宋体";
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+html {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    font-size: 625%;
+}
+
+img,
+div,
+body,
+html,
+ul,
+li,
+a {
+    -webkit-touch-callout: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+$num:100%;
+%full {
+    width: $num;
+    height: $num;
+}
+
+@mixin nums($w:$num, $h:$num) {
+    width: $w;
+    height: $h;
+}
+
+@mixin flex($s:center) {
+    display: flex;
+    justify-content: $s;
+    align-items: center;
+}
+
+%text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+html,
+body {
+    @extend %full;
+}
+
+.wrap {
+    @include nums(100%, 100%);
+    overflow: hidden;
+    background: #ccc;
+}
+
+header {
+    @include nums(100%, .45rem);
+    @include flex($s: space-between);
+    background: #fff;
+    padding: 0 .15rem;
+}
+
+.con {
+    @include nums(100%, auto);
+    background: #fff;
+    margin-top: .15rem;
+    padding: 0 .15rem;
+    h5 {
+        @include nums(100%, .7rem);
+        line-height: .4rem;
+        i {
+            @include nums(.4rem, .4rem);
+            text-align: center;
+            background: #ccc;
+            margin: .15rem;
+            font-size: .2rem;
+            color: gray;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        span {
+            padding-left: .1rem;
+        }
+    }
+    p {
+        @include nums(100%, .5rem);
+        line-height: .5rem;
+        border-top: 1px solid #ccc;
+        span {
+            padding-left: .1rem;
+        }
+    }
+    p:nth-child(2) {
+        i {
+            color: goldenrod;
+        }
+    }
+    p:nth-child(3) {
+        i {
+            color: rgb(182, 31, 31);
+        }
+    }
+    p:nth-child(4) {
+        i {
+            color: rgb(133, 221, 17);
+        }
+    }
+    p:nth-child(5) {
+        i {
+            color: rgb(26, 156, 243);
+        }
+    }
+}
